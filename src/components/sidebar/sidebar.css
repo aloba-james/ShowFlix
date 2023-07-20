@@ -1,0 +1,19 @@
+.sidebar-container{
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    border-right: 1px inset gray;
+    height: 100%; 
+    position: fixed;
+    overflow: auto; 
+}
+
+.sidebar-container div{
+    margin: 30px;
+}
+
+@media screen and (max-width: 992px){
+    .sidebar-container{       
+        display: none;
+    }
+}

@@ -1,0 +1,62 @@
+.mainview-container{    
+    
+}
+
+
+
+.mainview-container .body .film-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    align-items: center;
+    position: relative;
+}
+
+.mainview-container .body .film-card img{    
+    width: 100%;
+    height: 100%;
+    object-fit: fill;  
+    position: relative; 
+    
+    border-radius: 25px; 
+        
+}
+
+.mainview-container .body .film-card a{
+    position: absolute;    
+    display: block;
+    top: 75%;
+}
+
+.mainview-container .body .film-card button{    
+    opacity: 1;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;    
+}
+
+.mainview-container .body .films{
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+@media screen and (max-width: 992px){
+    .mainview-container{
+        margin-left: 0;
+    }   
+
+    .mainview-container .header input{
+        width: 250px;
+    }
+
+    .mainview-container .header .input{
+        display: flex;
+    }
+
+    .mainview-container .body .films{
+        display: block;
+    }
+}

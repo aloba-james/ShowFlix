@@ -1,0 +1,77 @@
+const mock = [
+    {
+        title: 'MK1',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',        
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK1224',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK122',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 9.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK123',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2021',
+        rating: 2.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK11',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK111',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK176',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK188',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+    {
+        title: 'MK100',
+        description: 'Very badass film',
+        imageUrl: 'https://i.ibb.co/tYXbfTj/brayden-law-i-BLOPHw-OHJE-unsplash.jpg',
+        date: '21 Apr 2020',
+        rating: 8.2,
+        duration: '1hr 50mins',
+    },
+];
+
+
+export default mock;

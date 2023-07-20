@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './routes/home/home.component';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import SubPage from './components/subpage/subpage.component';
+import MoviePage from './routes/moviepage/moviepage.component';
+import SideBar from './components/sidebar/sidebar.component';
+
 
 function App() {
+  const location = useLocation();
+  const background = location.state && location.state.background;
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <SideBar />
+      <Routes location={background || location}>
+        <Route path='/' element={<Home />}>
+          <Route path="details/:movie" element={<SubPage />} />
+        </Route>
+        <Route path=':movie' element={<MoviePage />} />
+      </Routes>
+      {background && (
+        <Routes>
+          <Route path="details/:movie" element={<SubPage />} />
+        </Routes>
+      )}
+    </>
+
   );
 }
 
