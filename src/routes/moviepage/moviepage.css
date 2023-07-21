@@ -12,6 +12,26 @@
     margin-left: 100px;
 }
 
+.release-date{
+    font-family: "Font Awesome 5 Free";
+    content: "\f017";
+}
+
+.rating{
+    font-family: "Font Awesome 5 Free";
+    content: "\f005";
+}
+
+.duration{
+    font-family: "Font Awesome 5 Free";
+    content: "\f04b";
+}
+
+.favorite{
+    font-family: "Font Awesome 5 Free";
+    content: "\f004";
+}
+
 .moviepage-container .watch{
     color: white;
     background-color: purple;
