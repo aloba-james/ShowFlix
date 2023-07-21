@@ -23,6 +23,14 @@ const MoviePage = () => {
 <div className='duration'>
  {dataSelect.Runtime}
 </div>     
+            <button className='watch'>Watch Now</button>
+            <div className='favorite'>Love</div>
+
+
+            <div className='similar-movies'>
+                <h2>Similar Movies</h2>
+                <div></div>
+            </div>
    </div>     
                
     );
