@@ -22,6 +22,18 @@
     content: "\f005";
 }
 
+.release-date {
+ margin-left: 20px;
+}
+
+.rating {
+  margin-left: 20px;
+}
+
+.duration {
+ margin-left: 20px;
+}
+
 .duration::before {
     font-family: "Font Awesome 5 Free";
     content: "\f04b";
