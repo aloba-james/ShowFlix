@@ -69,7 +69,7 @@ const Home = () => {
                    </div>
                 </div>
                 <div className="description">
-                    <p>Results for: <strong>{querySelect}</strong></p>
+                    <p>Results for: <strong style={{textTransform: 'capitalize'}}>{querySelect}</strong></p>
                 </div>
                 
             
