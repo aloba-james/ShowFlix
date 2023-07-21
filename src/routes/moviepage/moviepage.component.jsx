@@ -1,27 +1,20 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import mock from "../../mockdata";
 import './moviepage.css';
+import { useSelector } from "react-redux";
 
 
 const MoviePage = () => {
     const { movie } = useParams();
+    const dataSelect = useSelector(state => state.query.data);
     return (
-        <>
-            {
-                mock.filter((item) => item.title === movie).map((item) => (
-                    <>
-                        <div className="moviepage-container">
-                            <div>
-                                <Link to={`/${item.title}`}>{item.title}</Link>
-                            </div>
-                            <img src={item.imageUrl} alt="" />
-                            <div className="description">{item.description}</div>
-                        </div>
-                    </>
-                ))
-            }
-        </>
+        <div className="moviepage-container">
+            <div>
+                <Link to={`/${dataSelect.Title}`}>{dataSelect.title}</Link>
+            </div>
+            <img src={dataSelect.Poster} alt="" />
+            <div className="description">{dataSelect.Plot}</div>
+        </div>                   
     );
 };
 

@@ -6,38 +6,47 @@ import MainView from "../../components/mainview/mainview.component";
 import { Route, Routes } from "react-router-dom";
 import SubPage from "../../components/subpage/subpage.component";
 import SearchBox from '../../components/searchbox/searchbox.component';
-import { setQuery, setData } from '../../store/query/querySlice';
+import { setQuery, setData, getData, setLoading } from '../../store/query/querySlice';
 
 
 
 const Home = () => {
     const [searchField, setSearchField] = useState('');
     const [movies, setMovies] = useState();        
-    const querySelect = useSelector(state => state.query.currentQuery);
-    const dataSelect = useSelector(state => state.query.data);
+    const querySelect = useSelector(state => state.query.currentQuery);    
     const replaced  = querySelect.replaceAll(' ', '+');    
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState();
-      const [errors, setErrors] = useState();
- 
+    const [isLoading, setIsLoading] = useState(false);
+    const dataSelect = useSelector(state => state.query.data);    
 
-    useEffect(
+    useEffect(       
         () => {         
-            fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`)
-                .then(response => response.json())
-                .then((item) => setMovies(item));                   
+            const fetchData = async() => {
+                const response = await fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`);
+                const data = await response.json();
+                setMovies(data);
+                setIsLoading(true);
+                console.log(data);
+                if(data.Error){
+                    console.log('error');
+                    setIsLoading(false);
+
+                }
+            };
+              
+            fetchData();
         },
     [replaced]);
     
     useEffect(
         () => {
-            
-            dispatch(setData(movies));
-            
+            dispatch(setData(movies)); 
+            dispatch(setLoading(isLoading));    
+                            
         },
         [movies]
     );
-
+        console.log(isLoading);
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();
         setSearchField(searchFieldString);
@@ -45,9 +54,7 @@ const Home = () => {
 
     const onClickHandler = (event) => {
         dispatch(setQuery(searchField));
-    };
-
-    console.log('data',dataSelect);
+    };    
 
 
     return (
@@ -66,7 +73,9 @@ const Home = () => {
                     <p>Results for: <strong>{querySelect}</strong></p>
                 </div>
                 
-              <MainView /> 
+            
+                <MainView dataSelect={dataSelect} /> :
+              
             
                 
             </div>

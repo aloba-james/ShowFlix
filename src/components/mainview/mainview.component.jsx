@@ -5,30 +5,37 @@ import { useSelector } from "react-redux";
 
 const MainView = () => {
     const location = useLocation();
-    const dataSelect = useSelector(state => state.query.data);
-    const isLoading = useSelector(state => state.query.isLoading);
-    console.log(isLoading);
+    const isLoading = useSelector(state => state.query.loading);    
+    const dataSelect = useSelector(state => state.query.data);  
+    console.log(isLoading, dataSelect);      
     return (
         <>
-            {/* <div className="mainview-container">
-                        <div className="body">
-                            <div className="films">
+        {
+            isLoading ? (
+                <>
+            <div className="mainview-container">
+            <div className="body">
+                <div className="films">
 
-                                <div className="film-card">
-                                    <img src={dataSelect.poster} alt="img" />
-                                    <Link to={`/details/${dataSelect.title}`} state={{ background: location }} >
-                                        <button>
-                                            View
-                                        </button>
-                                    </Link>
-                                </div>
+                    <div className="film-card">
+                        <img src={dataSelect.Poster} alt="img" />
+                        <Link to={`/details/${dataSelect.Title}`} state={{ background: location }} >
+                            <button>
+                                View
+                            </button>
+                        </Link>
+                    </div>
 
-                            </div>
+                </div>
 
 
-                        </div>
-                    </div> */}
-              
+            </div>
+        </div> 
+
+    </>
+            ) :
+        ''
+        }
         </>
 
 
