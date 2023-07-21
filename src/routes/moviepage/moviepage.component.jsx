@@ -21,7 +21,7 @@ const MoviePage = () => {
 </div>
 
 <div className='duration'>
- {dataSelct.Runtime}
+ {dataSelect.Runtime}
 </div>     
    </div>     
                
