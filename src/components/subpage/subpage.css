@@ -5,7 +5,7 @@
     position: absolute;
     top: 0;
     background-color: white;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
 }
@@ -21,6 +21,7 @@
 
 .title{
     position: relative;
+    margin: 10pxx;
 }
 
 .poster-image{
