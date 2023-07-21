@@ -9,7 +9,7 @@ const MainView = () => {
     const dataSelect = useSelector(state => state.query.data);  
     console.log(isLoading, dataSelect);      
     return (
-        <>
+        
         {
             isLoading ? (
                 <>
@@ -33,9 +33,9 @@ const MainView = () => {
         </div> 
 
     </>
-            ) : (<>''</>)
+            ) : ''
         }
-        </>
+        
 
 
     );
