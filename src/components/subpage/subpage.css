@@ -15,6 +15,27 @@
     height: 200px;
     background-color: white;
     border-radius: 5px;
+    position: static;
+    
+}
+
+.title{
+    position: relative;
+}
+
+.poster-image{
+    top: 0;
+    position: relative;
+}
+
+.description{
+    position: relative;
+    margin: 10px;
+}
+
+.close{
+    position: absolute;
+    top: 0;
 }
 
 @media screen and (max-width: 992px){

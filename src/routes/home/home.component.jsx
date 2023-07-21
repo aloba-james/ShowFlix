@@ -22,7 +22,7 @@ const Home = () => {
     useEffect(       
         () => {         
             const fetchData = async() => {
-                const response = await fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`);
+                const response = await fetch(`https://www.omdbapi.com/?t=${replaced}&apikey=74a52849`);
                 const data = await response.json();
                 setMovies(data);
                 setIsLoading(true);

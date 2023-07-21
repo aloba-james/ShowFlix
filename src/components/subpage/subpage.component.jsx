@@ -10,17 +10,13 @@ const SubPage = () => {
     return (
         <>
             <div className="modal">
-                <div className="subpage-container">
-                    <div>Single Movie {movie}</div>
-
+                <div className="subpage-container">                    
                     <div>
-                        <Link to={`/${dataSelect.Title}`}>{dataSelect.Title}</Link>
+                       <h2 className="title"><Link to={`/${dataSelect.Title}`}>{dataSelect.Title}</Link></h2>
                     </div>
-                    <img src={dataSelect.Poster} alt="" />
+                    <img src={dataSelect.Poster} alt="" className="poster-image"/>
                     <div className="description">{dataSelect.Plot}</div>
-
-
-                    <button onClick={() => navigate(-1)}>Close</button>
+                    <button onClick={() => navigate(-1)} className="close">Close</button>
                 </div>
             </div>
             <Outlet />
