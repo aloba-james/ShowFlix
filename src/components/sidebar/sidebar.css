@@ -12,6 +12,10 @@
     margin: 30px;
 }
 
+.sidebar-container .search{
+    border-left: 2px solid purple;
+}
+
 .sidebar-container .logo-container{
     display: block;
     margin: 20px;
