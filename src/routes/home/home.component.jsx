@@ -22,8 +22,7 @@ const Home = () => {
  
 
     useEffect(
-        () => {   
-            setLoading(true)        
+        () => {         
             fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`)
                 .then(response => response.json())
                 .then((item) => setMovies(item));                   

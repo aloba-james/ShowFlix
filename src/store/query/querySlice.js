@@ -13,8 +13,13 @@ export const querySlice = createSlice({
     },
     setData: (state, action) => {
         state.data = action.payload
-        state.isLoading = false
+        if(action.payload === 'error'){
+            state.isLoading = false
+        }
     },
+    getData: (state, action) => {
+        
+    }
   }
 })
 
