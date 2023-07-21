@@ -16,4 +16,7 @@
     .sidebar-container{       
         display: none;
     }
+    .sidebar-container .logo-container{
+        display: block;
+    }
 }
