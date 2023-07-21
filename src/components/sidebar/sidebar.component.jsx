@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const SideBar = () => {
     return (
-        <div className="sidebar-container">
-            <div className="logo-container">
+         <div className="logo-container">
                 <Link to='/'>
                     Logo
                 </Link>
             </div> 
+        <div className="sidebar-container">  
             <div className="search">
                 <Link to='/'>
                     Search
