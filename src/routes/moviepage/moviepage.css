@@ -3,6 +3,10 @@
     padding:1px 16px;
 }
 
+.moviepage-container .more-info{
+    display: flex;
+}
+
 .moviepage-container .watch{
     color: white;
     background-color: purple;
