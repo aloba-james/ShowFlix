@@ -5,7 +5,6 @@ import SideBar from "../../components/sidebar/sidebar.component";
 import MainView from "../../components/mainview/mainview.component";
 import { Route, Routes } from "react-router-dom";
 import SubPage from "../../components/subpage/subpage.component";
-import SearchBox from '../../components/searchbox/searchbox.component';
 import { setQuery, setData, getData, setLoading } from '../../store/query/querySlice';
 
 
