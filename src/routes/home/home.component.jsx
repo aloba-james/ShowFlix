@@ -1,41 +1,31 @@
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './home.css';
 import SideBar from "../../components/sidebar/sidebar.component";
 import MainView from "../../components/mainview/mainview.component";
 import { Route, Routes } from "react-router-dom";
 import SubPage from "../../components/subpage/subpage.component";
 import SearchBox from '../../components/searchbox/searchbox.component';
-import mock from '../../mockdata';
+import { setQuery } from '../../store/query/querySlice';
+
+
 
 const Home = () => {
     const [searchField, setSearchField] = useState('');
-    const [movies, setMovies] = useState();
-    const [filteredMovies, setFilterMovies] = useState(movies);
-    const [movieTitle, setMovieTitle] = useState('');
-    const replaced  = movieTitle.replaceAll(' ', '+');
-    
+    const [movies, setMovies] = useState();        
+    const querySelect = useSelector(state => state.query.currentQuery);
+    const replaced  = querySelect.replaceAll(' ', '+');    
+    const dispatch = useDispatch()
  
 
     useEffect(
         () => {           
             fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`)
                 .then(response => response.json())
-                .then((item) => setMovies(item));                                       
-            
+                .then((item) => setMovies(item));                                                   
         },
     [replaced]);
     console.log(movies);
-
-    // useEffect(
-    //     () => {
-    //         const newFilteredMovies = movies.filter((movie) => {
-    //             return movie.title.toLocaleLowerCase().includes(searchField);
-    //         });
-
-    //         setFilterMovies(newFilteredMovies);
-
-    //     },
-    // [movies, searchField]);
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();
@@ -43,10 +33,9 @@ const Home = () => {
     };
 
     const onClickHandler = (event) => {
-        setMovieTitle(searchField);
+        dispatch(setQuery(searchField));
     };
 
-   
 
     return (
         <>
@@ -61,9 +50,12 @@ const Home = () => {
                    </div>
                 </div>
                 <div className="description">
-                    <p>Results for: <strong>{movieTitle}</strong></p>
+                    <p>Results for: <strong>{querySelect}</strong></p>
                 </div>
-                {/* <MainView movies={filteredMovies} /> */}
+                
+                {/* <MainView movies={movies} /> */}
+            
+                
             </div>
         </>
 
