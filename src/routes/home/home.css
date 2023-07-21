@@ -19,6 +19,18 @@
     margin-bottom: 30px;
     display: flex;
   }
+
+.search::before {
+     font-family: "Font Awesome 5 Brands";
+        content: "\f002";
+}
+
+
+
+.watchlist::before {
+     font-family: "Font Awesome 5 Brands";
+        content: "\f004";
+}
   
 
   .search input{
