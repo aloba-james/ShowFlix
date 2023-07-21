@@ -7,9 +7,9 @@
     display: flex;
 }
 
-.titlle{
-    display: inline-block;
-    margin-left: 100px;
+.title{
+    display: block;
+    margin-bottom: 50px;
 }
 
 .release-date::before {
@@ -42,9 +42,28 @@
 .favorite::before {
     font-family: "Font Awesome 5 Free";
     content: "\f004";
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.favorite{
+    margin-left: 20px;
 }
 
 .moviepage-container .watch{
+    color: white;
+    background-color: purple;
+}
+
+.more{
+    display: flex;
+    margin: 30px;
+}
+
+.watch{
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
     color: white;
     background-color: purple;
 }
