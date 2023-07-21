@@ -20,7 +20,7 @@ const MoviePage = () => {
  {dataSelect.imdbRating}
 </div>
 
-<div className='duration>
+<div className='duration'>
  {dataSelct.Runtime}
 </div>     
    </div>     
