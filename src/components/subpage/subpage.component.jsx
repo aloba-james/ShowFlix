@@ -16,6 +16,7 @@ const SubPage = () => {
                     </div>
                     <img src={dataSelect.Poster} alt="" className="poster-image"/>
                     <div className="description">{dataSelect.Plot}</div>
+  <div><Link to={`/${dataSelect.Title}`}><button className='watch'>Watch</button></Link></div>
                     <button onClick={() => navigate(-1)} className="close">Close</button>
                 </div>
             </div>
