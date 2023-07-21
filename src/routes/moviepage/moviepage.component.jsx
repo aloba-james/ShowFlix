@@ -14,7 +14,7 @@ const MoviePage = () => {
             </div>
             <img src={dataSelect.Poster} alt="" />
             <div className="description">{dataSelect.Plot}</div>
-<div className=release-date'>
+<div className='release-date'>
  {dataSelect.Released}</div>
 <div className='rating'>
  {dataSelect.imdbRating}
