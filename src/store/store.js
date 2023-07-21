@@ -3,6 +3,6 @@ import queryReducer from './query/querySlice';
 
 export default configureStore({
   reducer: {
-    query: queryReducer
+    query: queryReducer,    
   }
 });

@@ -6,7 +6,7 @@ import MainView from "../../components/mainview/mainview.component";
 import { Route, Routes } from "react-router-dom";
 import SubPage from "../../components/subpage/subpage.component";
 import SearchBox from '../../components/searchbox/searchbox.component';
-import { setQuery } from '../../store/query/querySlice';
+import { setQuery, setData } from '../../store/query/querySlice';
 
 
 
@@ -14,18 +14,30 @@ const Home = () => {
     const [searchField, setSearchField] = useState('');
     const [movies, setMovies] = useState();        
     const querySelect = useSelector(state => state.query.currentQuery);
+    const dataSelect = useSelector(state => state.query.data);
     const replaced  = querySelect.replaceAll(' ', '+');    
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const [loading, setLoading] = useState();
+      const [errors, setErrors] = useState();
  
 
     useEffect(
-        () => {           
+        () => {   
+            setLoading(true)        
             fetch(`http://www.omdbapi.com/?t=${replaced}&apikey=74a52849`)
                 .then(response => response.json())
-                .then((item) => setMovies(item));                                                   
+                .then((item) => setMovies(item));                   
         },
     [replaced]);
-    console.log(movies);
+    
+    useEffect(
+        () => {
+            
+            dispatch(setData(movies));
+            
+        },
+        [movies]
+    );
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();
@@ -35,6 +47,8 @@ const Home = () => {
     const onClickHandler = (event) => {
         dispatch(setQuery(searchField));
     };
+
+    console.log('data',dataSelect);
 
 
     return (
@@ -53,7 +67,7 @@ const Home = () => {
                     <p>Results for: <strong>{querySelect}</strong></p>
                 </div>
                 
-                {/* <MainView movies={movies} /> */}
+              <MainView /> 
             
                 
             </div>
