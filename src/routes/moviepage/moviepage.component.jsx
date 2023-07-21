@@ -26,7 +26,7 @@ const MoviePage = () => {
                 </div>    
             </div> 
             <button className='watch'>Watch Now</button>
-            <div className='favorite'>Love</div>
+            <div className='favorite' />
             <div className='similar-movies'>
                 <h2>Similar Movies</h2>
                 <div></div>
