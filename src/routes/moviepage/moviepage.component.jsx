@@ -7,6 +7,9 @@ import { useSelector } from "react-redux";
 const MoviePage = () => {
     const { movie } = useParams();
     const dataSelect = useSelector(state => state.query.data);
+    let time=dataSelect
+    var Hours = Math.floor(time /60)
+    var minutes = time - ( Hours % 60 ) 
     return (
         <div className="moviepage-container">
             <div className='title'>
@@ -22,7 +25,7 @@ const MoviePage = () => {
                      {dataSelect.imdbRating}
                 </div>
                 <div className='duration'>
-                     {dataSelect.Runtime}
+                     {Hours} hr(s) {minutes} mins
                 </div>    
             </div> 
             <button className='watch'>Watch Now</button>
