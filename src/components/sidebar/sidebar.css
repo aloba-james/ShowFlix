@@ -12,6 +12,11 @@
     margin: 30px;
 }
 
+.sidebar-container .logo-container{
+    display: block;
+    margin: 20px;
+}
+
 @media screen and (max-width: 992px){
     .sidebar-container{       
         display: none;
