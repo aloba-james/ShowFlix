@@ -10,7 +10,7 @@ const MoviePage = () => {
     return (
         <div className="moviepage-container">
             <div className='title'>
-                 {dataSelect.title}
+                 {dataSelect.Title}
             </div>
             <img src={dataSelect.Poster} alt="" />
             <div className="description">{dataSelect.Plot}</div>
