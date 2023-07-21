@@ -26,7 +26,7 @@ const MoviePage = () => {
                      {dataSelect.imdbRating}
                 </div>
                 <div className='duration'>
-                     {Hours} hr(s) {minutes} mins
+                     {Hours} hr(s) {minutes} min(s)
                 </div>    
             </div> 
             <div className="more">
