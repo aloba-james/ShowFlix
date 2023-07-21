@@ -2,3 +2,8 @@
     margin-left:20%;
     padding:1px 16px;
 }
+
+.movies-container .watch{
+    color: white;
+    background-color: purple;
+}
