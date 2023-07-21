@@ -20,7 +20,7 @@ const MainView = () => {
                     <div className="film-card">
                         <img src={dataSelect.Poster} alt="img" />
                         <Link to={`/details/${dataSelect.Title}`} state={{ background: location }} >
-                            <button>
+                            <button className='view'>
                                 View
                             </button>
                         </Link>
